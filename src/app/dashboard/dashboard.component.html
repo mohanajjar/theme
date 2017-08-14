@@ -1,0 +1,100 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-white bg-primary">
+        <div class="card-body pb-0">
+         <button type="button" class="btn btn-transparent p-0 float-right">
+            <i class="fa fa-repeat fa-lg"></i>
+          </button>
+          <h4 class="mb-0">9823</h4>
+          <p>Fichiers A contrepasser</p>
+        </div>
+        <div class="chart-wrapper px-3" style="height:70px;">
+          <canvas baseChart class="chart"
+          [datasets]="lineChart1Data"
+          [labels]="lineChart1Labels"
+          [options]="lineChart1Options"
+          [colors]="lineChart1Colours"
+          [legend]="lineChart1Legend"
+          [chartType]="lineChart1Type"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div><!--/.col--> <div class="col-sm-6 col-lg-3">
+      <div class="card text-white bg-danger">
+        <div class="card-body pb-0">
+          <div class="btn-group float-right" dropdown>
+           
+          </div>
+           <button type="button" class="btn btn-transparent p-0 float-right">
+            <i class="fa fa-send fa-lg"></i>
+          </button>
+          <h4 class="mb-0">23</h4>
+          <p>erreurs</p>
+        </div>
+        <div class="chart-wrapper px-3" style="height:70px;">
+          <canvas baseChart class="chart"
+          [datasets]="barChart1Data"
+          [labels]="barChart1Labels"
+          [options]="barChart1Options"
+          [colors]="barChart1Colours"
+          [legend]="barChart1Legend"
+          [chartType]="barChart1Type"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div><!--/.col-->
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-white bg-info">
+        <div class="card-body pb-0">
+          <button type="button" class="btn btn-transparent p-0 float-right">
+            <i class="fa fa-bell-o fa-lg"></i>
+          </button>
+          <h4 class="mb-0">23</h4>
+          <p>Liaison moteur</p>
+        </div>
+        <div class="chart-wrapper px-3" style="height:70px;">
+          <canvas baseChart class="chart"
+          [datasets]="lineChart2Data"
+          [labels]="lineChart2Labels"
+          [options]="lineChart2Options"
+          [colors]="lineChart2Colours"
+          [legend]="lineChart2Legend"
+          [chartType]="lineChart2Type"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div><!--/.col-->
+    <div class="col-sm-6 col-lg-3">
+      <div class="card text-white bg-warning">
+        <div class="card-body pb-0">
+          <div class="btn-group float-right" dropdown>
+        
+          </div>
+           <button type="button" class="btn btn-transparent p-0 float-right">
+            <i class="fa fa-bullhorn fa-lg"></i>
+          </button>
+          <h4 class="mb-0">8230</h4>
+          <p>traces</p>
+        </div>
+        <div class="chart-wrapper" style="height:70px;">
+          <canvas baseChart class="chart"
+          [datasets]="lineChart3Data"
+          [labels]="lineChart3Labels"
+          [options]="lineChart3Options"
+          [colors]="lineChart3Colours"
+          [legend]="lineChart3Legend"
+          [chartType]="lineChart3Type"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div><!--/.col-->
+   
+  </div><!--/.row-->
+   <!--/.card-->
+ 
+</div>
