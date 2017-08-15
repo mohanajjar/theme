@@ -1,4 +1,4 @@
-<header class="app-header navbar">
+<header class="app-header navbar" style="background-color: #ee765e;">
   <button class="navbar-toggler d-lg-none" type="button" appMobileSidebarToggler>&#9776;</button>
   <a class="navbar-brand" href="#"></a>
   <button class="navbar-toggler d-md-down-none" type="button" appSidebarToggler>&#9776;</button>
@@ -6,15 +6,7 @@
    
   </ul>
   <ul class="nav navbar-nav ml-auto">
-    <li class="nav-item d-md-down-none">
-      <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
-    </li>
-    <li class="nav-item d-md-down-none">
-      <a class="nav-link" href="#"><i class="icon-list"></i></a>
-    </li>
-    <li class="nav-item d-md-down-none">
-      <a class="nav-link" href="#"><i class="icon-location-pin"></i></a>
-    </li>
+    
     <li class="nav-item dropdown" dropdown (onToggle)="toggled($event)">
       <a href class="nav-link dropdown-toggle" dropdownToggle (click)="false">
         <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
@@ -55,14 +47,11 @@
         <li class="nav-item nav-dropdown" appNavDropdown>
           <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-star"></i> Traçabilite</a>
           <ul class="nav-dropdown-items">
-<!--             <li class="nav-item"> -->
-<!--               <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/register']"><i class="icon-star"></i> Register</a> -->
-<!--             </li> -->
             <li class="nav-item">
-              <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/404']"><i class="icon-star"></i> Erreurs</a>
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/actions/receherche-erreurs']"><i class="icon-star"></i> Erreurs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/500']"><i class="icon-star"></i> Traces</a>
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/actions/traces']"><i class="icon-star"></i> Traces</a>
             </li>
           </ul>
         </li>

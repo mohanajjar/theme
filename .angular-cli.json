@@ -53,6 +53,9 @@
   },
   "defaults": {
     "styleExt": "scss",
+	 "serve": {
+      "port": 8080
+    },
     "prefixInterfaces": false
   }
 }

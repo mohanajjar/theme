@@ -38,10 +38,6 @@ export const routes: Routes = [
         loadChildren: './dashboard/dashboard.module#DashboardModule'
       },
       {
-        path: 'components',
-        loadChildren: './components/components.module#ComponentsModule'
-      },
-      {
         path: 'actions',
         loadChildren: './actions/actions.module#ActionsModule'
       }
