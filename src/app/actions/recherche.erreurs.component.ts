@@ -13,7 +13,7 @@ export class RechercheErreursComponent implements OnInit {
 
   onLoggedin() {
     console.log('hiiiiiiiiiiiiiiiiiiiiiii');
-    this.router.navigate(['/erreurs']);
+    this.router.navigate(['erreurs']);
     //    localStorage.setItem('isLoggedin', 'true');
   }
 }

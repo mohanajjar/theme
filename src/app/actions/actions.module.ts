@@ -5,11 +5,13 @@ import {ContrepassationDemandeComponent} from './contrepassation-demande.compone
 import {ErreursComponent} from '../actions/erreurs.component';
 import {TracesComponent} from '../actions/traces.component';
 import {RechercheErreursComponent} from '../actions/recherche.erreurs.component';
+import {CollapsibleModule} from 'angular2-collapsible'; // <-- import the module
 
 import {ActionsRoutingModule} from './actions-routing.module';
 
 @NgModule({
-  imports: [ActionsRoutingModule],
+  imports: [ActionsRoutingModule,
+    CollapsibleModule],
   declarations: [
     ContrepassationNormaleComponent,
     ContrepassationDemandeComponent,
