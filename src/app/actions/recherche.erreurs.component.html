@@ -5,13 +5,14 @@
 				<div class="card mx-4">
 					<div class="card-body p-4">
 
-						<form role="form">
+						<form (ngSubmit)="searchErreurs()">
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label" for="text-input">Id
 									Eo</label>
 								<div class="col-md-9">
-									<input type="text" id="text-input" name="text-input"
-										class="form-control" placeholder="number">
+									<input type="text" [(ngModel)]="erreursParCriteres.idEo"
+										id="text-input" name="text-input" class="form-control"
+										placeholder="number">
 								</div>
 							</div>
 
@@ -19,7 +20,8 @@
 								<label class="col-md-3 form-control-label" for="select">CodeType
 									Erreur</label>
 								<div class="col-md-9">
-									<select id="select" name="select" class="form-control">
+									<select id="select" name="select" class="form-control"
+										[(ngModel)]="erreursParCriteres.codeTypeErreur">
 										<option>INCOHERENCE_AS400</option>
 										<option>REFERENTIEL_PRODUIT</option>
 										<option>REFERENTIEL_PARTENAIRE</option>
@@ -35,6 +37,7 @@
 									Sequence</label>
 								<div class="col-md-9">
 									<input type="text" id="text-input" name="text-input"
+										[(ngModel)]="erreursParCriteres.idSequence"
 										class="form-control" placeholder="number">
 								</div>
 							</div>
@@ -43,7 +46,8 @@
 								<label class="col-md-3 form-control-label" for="select">Code
 									Type EO</label>
 								<div class="col-md-9">
-									<select id="select" name="select" class="form-control">
+									<select id="select" name="select" class="form-control"
+										[(ngModel)]="erreursParCriteres.codeTypeEo">
 										<option>COMMISSION</option>
 										<option>REMISE_EN_BANQUE</option>
 										<option>RH</option>
@@ -57,6 +61,7 @@
 									de contrat</label>
 								<div class="col-md-9">
 									<input type="text" id="text-input" name="text-input"
+										[(ngModel)]="erreursParCriteres.numeroContrat"
 										class="form-control" placeholder="number">
 								</div>
 							</div>
@@ -65,7 +70,8 @@
 								<label class="col-md-3 form-control-label" for="select">Source
 									d'erreur</label>
 								<div class="col-md-9">
-									<select id="select" name="select" class="form-control">
+									<select id="select" name="select" class="form-control"
+										[(ngModel)]="erreursParCriteres.sourceErreur">
 										<option>REFERENTIEL</option>
 										<option>AS400</option>
 										<option>ROUTEUR</option>
@@ -77,11 +83,22 @@
 								<p>Si aucun critère n'est sélectionné,les erreurs de dernier
 									mois seront affichèes</p>
 							</div>
-							<button type="button" [routerLink]="['/actions/erreurs']"
-								class="btn btn-outline-danger btn-lg btn-block">Valider</button>
-
+							<button class="btn btn-outline-danger btn-lg btn-block">Valider</button>
 						</form>
 
+						<div class="form-group">
+							<label class="col-xs-4 control-label">Submitted Data : </label>
+							<div class="col-xs-8">
+								<div [hidden]="!submitted">
+									<span>from angulartypescript.com</span>
+									<textarea style="width: 300px" class="form-control" rows="6">{{data}}</textarea>
+								</div>
+								<div [hidden]="submitted">
+									<span>Edit your Data then click Submit to get Data from
+										: angulartypescript.com</span>
+								</div>
+							</div>
+						</div>
 
 					</div>
 
