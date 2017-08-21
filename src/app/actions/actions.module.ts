@@ -9,10 +9,12 @@ import {RechercheErreursComponent} from '../actions/recherche.erreurs.component'
 import {CollapsibleModule} from 'angular2-collapsible'; // <-- import the module
 
 import {ActionsRoutingModule} from './actions-routing.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
     ActionsRoutingModule,
+    CommonModule,
     FormsModule,
     CollapsibleModule],
   declarations: [

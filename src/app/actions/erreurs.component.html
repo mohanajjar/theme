@@ -4,71 +4,13 @@
 			<div class="col-md-8">
 				<div class="card mx-4">
 					<div class="card-body p-4">
+						<h3>Book Details with Observable</h3>
 
-						<collapsible-table [type]="'expandable'" bordered class="table" style="border: 1px solid #ccc;">
-
-						<thead>
-							<collapsible-table-row>
-							<th>Id EO</th>
-							<th>Code type Erreur</th>
-							<th>Source Erreur</th>
-							<th>Code Type EO</th>
-							</collapsible-table-row>
-						</thead>
-
-						<tbody>
-							<collapsible-table-row style="border: 1px solid #ccc;"
-								[detail]="detail1" class="Collapsible Group 1">
-							<td>210000</td>
-							<td>INCOHERENCE_AS400</td>
-							<td>REFERENTIEL</td>
-							<td>REMISE_EN_BANQUE</td>
-							</collapsible-table-row>
-							<collapsible-table-row-detail #detail1>
-							<table>
-								<tr>
-									<td width="75%">ID Erreur</td>
-									<td width="75%">Nom Contexte</td>
-									<td width="75%">Valeur Information</td>
-								</tr>
-								<tr>
-									<td width="75%">1111111111</td>
-									<td width="75%">NUMERO_INVETISSEMENT</td>
-									<td width="90%">2964331</td>
-								</tr>
-								<tr>
-									<td width="75%">22222222222222222</td>
-									<td width="75%">NUMERO_INVETISSEMENT</td>
-									<td width="90%">6546873545</td>
-								</tr>
-							</table>
-							</collapsible-table-row-detail>
-
-							<collapsible-table-row [detail]="detail2">
-							<td>786445454</td>
-							<td>INCOHERENCE_AS400</td>
-							<td>REFERENTIEL</td>
-							<td>REMISE_EN_BANQUE</td>
-							</collapsible-table-row>
-							<collapsible-table-row-detail #detail2>
-							<table>
-								<tr>
-									<td width="75%">ID Erreur</td>
-									<td width="75%">Nom Contexte</td>
-									<td width="75%">Valeur Information</td>
-								</tr>
-								<tr>
-									<td width="75%">1111111111</td>
-									<td width="75%">NUMERO_INVETISSEMENT</td>
-									<td width="90%">2964331</td>
-								</tr>
-							</table>
-							</collapsible-table-row-detail>
-
-						</tbody>
-
-						</collapsible-table>
-
+						<ul>
+							<li *ngFor="let erreur of observableErreurs">
+								Code Type: {{erreur.code_type_eo}}
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>

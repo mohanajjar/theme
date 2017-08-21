@@ -10,7 +10,7 @@
 								<label class="col-md-3 form-control-label" for="text-input">Id
 									Eo</label>
 								<div class="col-md-9">
-									<input type="text" [(ngModel)]="erreursParCriteres.idEo"
+									<input type="text" [(ngModel)]="erreursParCriteres.id_eo"
 										id="text-input" name="text-input" class="form-control"
 										placeholder="number">
 								</div>
@@ -21,7 +21,7 @@
 									Erreur</label>
 								<div class="col-md-9">
 									<select id="select" name="select" class="form-control"
-										[(ngModel)]="erreursParCriteres.codeTypeErreur">
+										[(ngModel)]="erreursParCriteres.code_type_erreur">
 										<option>INCOHERENCE_AS400</option>
 										<option>REFERENTIEL_PRODUIT</option>
 										<option>REFERENTIEL_PARTENAIRE</option>
@@ -37,7 +37,7 @@
 									Sequence</label>
 								<div class="col-md-9">
 									<input type="text" id="text-input" name="text-input"
-										[(ngModel)]="erreursParCriteres.idSequence"
+										[(ngModel)]="erreursParCriteres.id_sequence"
 										class="form-control" placeholder="number">
 								</div>
 							</div>
@@ -47,7 +47,7 @@
 									Type EO</label>
 								<div class="col-md-9">
 									<select id="select" name="select" class="form-control"
-										[(ngModel)]="erreursParCriteres.codeTypeEo">
+										[(ngModel)]="erreursParCriteres.code_type_eo">
 										<option>COMMISSION</option>
 										<option>REMISE_EN_BANQUE</option>
 										<option>RH</option>
@@ -61,7 +61,7 @@
 									de contrat</label>
 								<div class="col-md-9">
 									<input type="text" id="text-input" name="text-input"
-										[(ngModel)]="erreursParCriteres.numeroContrat"
+										[(ngModel)]="erreursParCriteres.numero_contrat"
 										class="form-control" placeholder="number">
 								</div>
 							</div>
@@ -71,7 +71,7 @@
 									d'erreur</label>
 								<div class="col-md-9">
 									<select id="select" name="select" class="form-control"
-										[(ngModel)]="erreursParCriteres.sourceErreur">
+										[(ngModel)]="erreursParCriteres.source_erreur">
 										<option>REFERENTIEL</option>
 										<option>AS400</option>
 										<option>ROUTEUR</option>
@@ -79,11 +79,36 @@
 									</select>
 								</div>
 							</div>
+
+							<div class="form-group row">
+								<label class="col-md-3 form-control-label" for="text-input">Date
+									début</label>
+								<div class="col-md-9">
+									<input type="date" id="fromDate" class="datepicker"
+										[(ngModel)]="erreursParCriteres.date_debut_erreur"
+										(ngModelChange)="erreursParCriteres.date_debut_erreur = $event"
+										type="date" name="startDate" class="form-control">
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label class="col-md-3 form-control-label" for="text-input">Date
+									fin</label>
+								<div class="col-md-9">
+									<input type="date" id="fromDate" class="datepicker"
+										[(ngModel)]="erreursParCriteres.date_fin_erreur"
+										(ngModelChange)="erreursParCriteres.date_fin_erreur = $event"
+										type="date" name="startDate" class="form-control">
+								</div>
+							</div>
+							
+
 							<div class="form-group row">
 								<p>Si aucun critère n'est sélectionné,les erreurs de dernier
 									mois seront affichèes</p>
 							</div>
-							<button class="btn btn-outline-danger btn-lg btn-block">Valider</button>
+							<button type="button" [routerLink]="['../erreurs']" (click)="onLoggedin()"
+ +								class="btn btn-outline-danger btn-lg btn-block">Valider</button>
 						</form>
 
 						<div class="form-group">

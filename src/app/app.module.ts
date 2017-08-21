@@ -20,10 +20,12 @@ import {AppRoutingModule} from './app.routing';
 // Layouts
 import {FullLayoutComponent} from './layouts/full-layout.component';
 import {SimpleLayoutComponent} from './layouts/simple-layout.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
