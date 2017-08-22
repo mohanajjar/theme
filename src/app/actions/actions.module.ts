@@ -11,7 +11,7 @@ import {CollapsibleModule} from 'angular2-collapsible'; // <-- import the module
 import {ActionsRoutingModule} from './actions-routing.module';
 import {CommonModule} from '@angular/common';
 import {BookService} from '../services/book.service';
-//import {ErreursService} from '../services/erreurs.service';
+import {ErreursService} from '../services/erreurs.service';
 
 @NgModule({
   imports: [
@@ -20,7 +20,7 @@ import {BookService} from '../services/book.service';
     FormsModule,
     CollapsibleModule],
   providers: [
-    BookService
+    BookService, ErreursService
   ],
   declarations: [
     ContrepassationNormaleComponent,

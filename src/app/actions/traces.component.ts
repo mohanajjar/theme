@@ -13,7 +13,10 @@ export class TracesComponent {
   observableBooks: Observable<Book[]>;
   books: Book[];
   errorMessage: String;
+
+
   constructor(private bookService: BookService) {}
+  
   ngOnInit(): void {
     this.observableBooks = this.bookService.getBooksWithObservable();
     this.observableBooks.subscribe(

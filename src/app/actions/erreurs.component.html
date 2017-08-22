@@ -1,19 +1,45 @@
 <div class="app flex-row align-items-center">
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-md-8">
-				<div class="card mx-4">
-					<div class="card-body p-4">
+			<div class="col-md-12">
+				<div class="card mx-12">
+						<collapsible-table [type]="'accordion'" bordered>
+						<thead>
+							<collapsible-table-row>
+							<th>Id Erreur</th>
+							<th>Code type Erreur</th>
+							<th>Code type EO</th>
+							<th>Numéro de contrat</th>
+							<th>Source d'erreur</th>
+							<th>Date d'erreur</th>
+							</collapsible-table-row>
+						</thead>
 
-						<h3>Book Details with Observable</h3>
-						<ul>
-							<li *ngFor="let book of observableBooks | async">Id:
-								{{book.id}}, Name: {{book.name}}</li>
-						</ul>
+						<tbody *ngFor="let erreur of erreurs">
+							<collapsible-table-row [detail]="detail1">
+							<td width="15%">{{erreur.id_erreur}}</td>
+							<td width="15%" >{{erreur.code_type_erreur}}</td>
+							<td width="15%" >{{erreur.code_type_eo}}</td>
+							<td width="15%" >{{erreur.numero_contrat}}</td>
+							<td width="15%" >{{erreur.source_erreur}}</td>
+							<td width="15%">{{erreur.date_erreur}}</td>
+							</collapsible-table-row>
+							<collapsible-table-row-detail #detail1>
+							<table>
+								<tr>
+									<td width="75%">Row #1 Detail #1</td>
+									<td>Row #1 Detail #2</td>
+								</tr>
+							</table>
+							</collapsible-table-row-detail>
+						</tbody>
+
+						</collapsible-table>
+
+
 					</div>
 
 				</div>
 			</div>
 		</div>
-	</div>
 </div>

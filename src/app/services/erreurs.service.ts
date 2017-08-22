@@ -1,4 +1,4 @@
-import {ErreursParCriteres} from '../models/erreursparcriteres';
+import { Erreur } from '../models/erreur';
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs';
@@ -6,14 +6,14 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class ErreursService {
 
-  url = "C://Users/mohamed_najjar/Desktop/erreurs.json";
+  url = "assets/erreurs.json";
   constructor(private http: Http) {}
-  getErreursWithObservable(): Observable<ErreursParCriteres[]> {
+  getErreursWithObservable(): Observable<Erreur[]> {
     return this.http.get(this.url)
       .map(this.extractData)
       .catch(this.handleErrorObservable);
   }
-  getErreursWithPromise(): Promise<ErreursParCriteres[]> {
+  getErreursWithPromise(): Promise<Erreur[]> {
     return this.http.get(this.url).toPromise()
       .then(this.extractData)
       .catch(this.handleErrorPromise);
