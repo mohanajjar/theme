@@ -1,23 +1,23 @@
-import {Component} from '@angular/core';
-import {ErreursParCriteres} from '../models/erreursparcriteres'
-import {ErreursService} from './services/erreurs.service';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
+
+import {BookService} from '../services/book.service';
+import {Book} from '../models/book';
+
 
 @Component({
   templateUrl: 'erreurs.component.html'
 })
 export class ErreursComponent {
-  erreursParCriteres: ErreursParCriteres = new ErreursParCriteres();
-  observableErreurs: Observable<ErreursParCriteres[]>
-  erreurs: ErreursParCriteres[];
+
+  observableBooks: Observable<Book[]>;
+  books: Book[];
   errorMessage: String;
-
-  constructor(private ErreursService: ErreursService) {}
-
-  ngOnInit() {
-    this.observableErreurs = this.ErreursService.getErreursWithObservable();
-    this.observableErreurs.subscribe(serreurs => this.erreurs = serreurs,
+  constructor(private bookService: BookService) {}
+  ngOnInit(): void {
+    this.observableBooks = this.bookService.getBooksWithObservable();
+    this.observableBooks.subscribe(
+      books => this.books = books,
       error => this.errorMessage = <any>error);
   }
-
 }

@@ -4,14 +4,14 @@
 			<div class="col-md-8">
 				<div class="card mx-4">
 					<div class="card-body p-4">
-						<h3>Book Details with Observable</h3>
 
+						<h3>Book Details with Observable</h3>
 						<ul>
-							<li *ngFor="let erreur of observableErreurs">
-								Code Type: {{erreur.code_type_eo}}
-							</li>
+							<li *ngFor="let book of observableBooks | async">Id:
+								{{book.id}}, Name: {{book.name}}</li>
 						</ul>
 					</div>
+
 				</div>
 			</div>
 		</div>

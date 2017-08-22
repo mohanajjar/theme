@@ -1,5 +1,5 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; // <-- import required BrowserAnimationsModule
 import {AppComponent} from './app.component';
@@ -21,7 +21,6 @@ import {AppRoutingModule} from './app.routing';
 import {FullLayoutComponent} from './layouts/full-layout.component';
 import {SimpleLayoutComponent} from './layouts/simple-layout.component';
 import { HttpModule } from '@angular/http';
-
 @NgModule({
   imports: [
     BrowserModule,

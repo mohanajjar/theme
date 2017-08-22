@@ -1,10 +1,28 @@
-<div class="animated fadeIn">
-	<div class="card" id="new">
-		<div class="card-header">En cours d'instruction</div>
-		<div class="card-body">
-			<div class="row text-center">
-				<img alt=""
-					src="http://asslemabreizh.org/wp-content/uploads/2016/06/UnderConstruction.jpg">
+<div class="app flex-row align-items-center">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<div class="card mx-4">
+					<div class="card-body p-4">
+
+						<h3>Book Details with Observable</h3>
+						<ul>
+							<li *ngFor="let book of observableBooks | async">Id:
+								{{book.id}}, Name: {{book.name}}</li>
+						</ul>
+
+
+
+						<h3>Book Details after "subscribe" to Observable</h3>
+						<ul>
+							<li *ngFor="let book of books">Id: {{book.id}}, Name:
+								{{book.name}}</li>
+						</ul>
+
+						<div *ngIf="errorMessage">{{errorMessage}}</div>
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</div>

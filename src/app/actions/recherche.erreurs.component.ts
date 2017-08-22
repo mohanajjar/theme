@@ -12,9 +12,6 @@ export class RechercheErreursComponent implements OnInit {
   public submitted = false;
   public data;
 
-  date2 = new Date("Thu Jan 01 2015 00:00:00 GMT-0500 (EST)");
-  gmtDate = '2015-01-01T00:00:00.000Z';
-
   constructor() {
   }
 
