@@ -20,7 +20,7 @@ import {ErreursService} from '../services/erreurs.service';
     FormsModule,
     CollapsibleModule],
   providers: [
-    BookService, ErreursService
+    BookService
   ],
   declarations: [
     ContrepassationNormaleComponent,

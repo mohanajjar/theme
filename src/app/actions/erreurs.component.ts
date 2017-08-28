@@ -2,15 +2,16 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 
 import {ErreursService} from '../services/erreurs.service';
-import { Erreur } from '../models/erreur';
+import {Erreurs} from '../models/liste_erreurs';
 
 @Component({
-  templateUrl: 'erreurs.component.html'
+  templateUrl: 'erreurs.component.html',
+  providers: [ErreursService]
 })
 export class ErreursComponent {
 
-  observableErreurs: Observable<Erreur[]>;
-  erreurs: Erreur[];
+  observableErreurs: Observable<Erreurs>;
+  erreurs: Erreurs;
   errorMessage: String;
   constructor(private erreursService: ErreursService) {}
 
