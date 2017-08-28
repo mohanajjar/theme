@@ -9,12 +9,14 @@ import {RechercheErreursComponent} from '../actions/recherche.erreurs.component'
 import {CollapsibleModule} from 'angular2-collapsible'; // <-- import the module
 
 import {ActionsRoutingModule} from './actions-routing.module';
+import { DataTableModule } from 'angular-2-data-table';
 import {CommonModule} from '@angular/common';
 import {BookService} from '../services/book.service';
 import {ErreursService} from '../services/erreurs.service';
 
 @NgModule({
   imports: [
+    DataTableModule,
     CommonModule,
     ActionsRoutingModule,
     FormsModule,

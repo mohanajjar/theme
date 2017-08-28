@@ -3,40 +3,57 @@
 		<div class="row justify-content-center">
 			<div class="col-md-12">
 				<div class="card mx-12">
-					<collapsible-table [type]="'accordion'" bordered>
-					<thead>
-						<collapsible-table-row>
-						<th>Id Erreur</th>
-						<th>Code type Erreur</th>
-						<th>Code type EO</th>
-						<th>Numéro de contrat</th>
-						<th>Source d'erreur</th>
-						<th>Date d'erreur</th>
-						</collapsible-table-row>
-					</thead>
+			
 
-					<tbody *ngFor="let erreur of erreurs.liste_erreurs">
-						<collapsible-table-row >
-						<td width="15%">{{erreur.id_erreur}}</td>
-						<td width="15%">{{erreur.code_type_erreur}}</td>
-						<td width="15%">{{erreur.code_type_eo}}</td>
-						<td width="15%">{{erreur.numero_contrat}}</td>
-						<td width="15%">{{erreur.source_erreur}}</td>
-						<td width="15%">{{erreur.date_erreur | date: 'dd/MM/yyyy'}}</td>
-						</collapsible-table-row>
-<!-- 						<collapsible-table-row-detail #detail1> -->
-<!-- 						<table> -->
-<!-- 							<tr> -->
-<!-- 								<td width="75%">Row #1 Detail #1</td> -->
-<!-- 								<td>Row #1 Detail #2</td> -->
-<!-- 							</tr> -->
-<!-- 						</table> -->
-<!-- 						</collapsible-table-row-detail> -->
-					</tbody>
+<div style="margin: auto; max-width: 1000px; margin-top:50px">
+    <data-table id="erreurs-grid"
+        headerTitle="Erreurs"
+        [items]="erreurs"
+        [itemCount]="erreursCount"
+        (reload)="reloadErreurs($event)"
 
-					</collapsible-table>
+        [limit]="8"
+        [sortBy]="'rating'"
+        [sortAsc]="false"
 
-
+        [selectColumn]="true"
+        [multiSelect]="false"
+        [substituteRows]="false"
+        [expandableRows]="true"
+        [translations]="translations"
+        [indexColumnHeader]="'#'"
+        [selectOnRowClick]="true"
+        >
+        <template #dataTableExpand let-item="item">
+            <div [textContent]="item.description" style="padding: 5px; color: gray"></div>
+        </template>
+        <data-table-column
+            [property]="'id_erreur'"
+            [header]="'Id Erreur'"
+            [sortable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'code_type_erreur'"
+            [header]="'Code type Erreur'"
+            [sortable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'code_type_eo'"
+            [header]="'Code type EO'"
+            [sortable]="true"
+            [cellColors]="cellColor">
+        </data-table-column>
+        <data-table-column
+            [property]="'numero_contrat'"
+            [header]="'Numéro de contrat'">
+        </data-table-column>
+    </data-table>
+    <div style="margin-top: 10px">
+        <b>Selected:</b>
+        <span *ngIf="erreursTable.selectedRow == null"><i>No item selected</i></span>
+        <span [textContent]="erreursTable.selectedRow && erreursTable.selectedRow.item.title"></span>
+    </div>
+</div>
 				</div>
 
 			</div>
