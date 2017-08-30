@@ -5,14 +5,14 @@
 				<div class="card mx-4">
 					<div class="card-body p-4">
 
-						<form (ngSubmit)="searchErreurs()">
+						<form (ngSubmit)="searchErreurs(erreurForm.value)" novalidate
+							[formGroup]="erreurForm">
 							<div class="form-group row">
 								<label class="col-md-3 form-control-label" for="text-input">Id
 									Eo</label>
 								<div class="col-md-9">
-									<input type="text" [(ngModel)]="erreursParCriteres.id_eo"
-										id="text-input" name="text-input" class="form-control"
-										placeholder="number">
+									<input type="text" formControlName="id_eo" id="text-input"
+										name="text-input" class="form-control" placeholder="number">
 								</div>
 							</div>
 
@@ -21,7 +21,7 @@
 									Erreur</label>
 								<div class="col-md-9">
 									<select id="select" name="select" class="form-control"
-										[(ngModel)]="erreursParCriteres.code_type_erreur">
+										formControlName="code_type_erreur">
 										<option>INCOHERENCE_AS400</option>
 										<option>REFERENTIEL_PRODUIT</option>
 										<option>REFERENTIEL_PARTENAIRE</option>
@@ -37,8 +37,8 @@
 									Sequence</label>
 								<div class="col-md-9">
 									<input type="text" id="text-input" name="text-input"
-										[(ngModel)]="erreursParCriteres.id_sequence"
-										class="form-control" placeholder="number">
+										formControlName="id_sequence" class="form-control"
+										placeholder="number">
 								</div>
 							</div>
 
@@ -47,7 +47,7 @@
 									Type EO</label>
 								<div class="col-md-9">
 									<select id="select" name="select" class="form-control"
-										[(ngModel)]="erreursParCriteres.code_type_eo">
+										formControlName="code_type_eo">
 										<option>COMMISSION</option>
 										<option>REMISE_EN_BANQUE</option>
 										<option>RH</option>
@@ -61,8 +61,8 @@
 									de contrat</label>
 								<div class="col-md-9">
 									<input type="text" id="text-input" name="text-input"
-										[(ngModel)]="erreursParCriteres.numero_contrat"
-										class="form-control" placeholder="number">
+										formControlName="numero_contrat" class="form-control"
+										placeholder="number">
 								</div>
 							</div>
 
@@ -71,7 +71,7 @@
 									d'erreur</label>
 								<div class="col-md-9">
 									<select id="select" name="select" class="form-control"
-										[(ngModel)]="erreursParCriteres.source_erreur">
+										formControlName="source_erreur">
 										<option>REFERENTIEL</option>
 										<option>AS400</option>
 										<option>ROUTEUR</option>
@@ -79,12 +79,39 @@
 									</select>
 								</div>
 							</div>
+
+
+							<div class="form-group row">
+								<label class="col-md-3 form-control-label" for="text-input">Date
+									de début</label>
+								<div class="col-md-9">
+									<input type="date" formControlName="date_debut_erreur" useValueAsDate
+										id="text-input" name="text-input" class="form-control"
+										minDate="2017-08-28">
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-md-3 form-control-label" for="text-input">Date
+									de fin</label>
+								<div class="col-md-9">
+									<input type="date" formControlName="date_fin_erreur" useValueAsDate
+										id="text-input" name="text-input" class="form-control">
+								</div>
+								
+							</div>
+
+
+
+
 							<div class="form-group row">
 								<p>Si aucun critère n'est sélectionné,les erreurs de dernier
 									mois seront affichèes</p>
 							</div>
-							<!-- 							<button class="btn btn-outline-danger btn-lg btn-block">Valider</button> -->
-							<button class="btn btn-outline-danger btn-lg btn-block" type="button" [routerLink]="['/actions/erreurs']">Valider</button>
+							<button class="btn btn-outline-danger btn-lg btn-block" type="submit">Valider</button>
+							<!-- 							<button class="btn btn-outline-danger btn-lg btn-block" -->
+							<!-- 								type="button" [routerLink]="['/actions/erreurs']">Valider</button> -->
+						<label *ngIf="erreurForm.errors">{{ erreurForm.errors?.dates}}</label>
 						</form>
 
 						<div class="form-group">

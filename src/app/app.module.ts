@@ -1,9 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; // <-- import required BrowserAnimationsModule
 import {AppComponent} from './app.component';
-import { FormsModule } from '@angular/forms';
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {TabsModule} from 'ngx-bootstrap/tabs';
 import {NAV_DROPDOWN_DIRECTIVES} from './shared/nav-dropdown.directive';
@@ -13,19 +12,20 @@ import {AsideToggleDirective} from './shared/aside.directive';
 import {BreadcrumbsComponent} from './shared/breadcrumb.component';
 import {LoginComponent} from './login/login.component';
 import {RecoverPasswordComponent} from './login/recover.password.component';
+import { DateValueAccessorModule } from 'angular-date-value-accessor';
 
 // Routing Module
-import {AppRoutingModule} from './app.routing';
+import {AppRoutingModule,} from './app.routing';
 
 // Layouts
 import {FullLayoutComponent} from './layouts/full-layout.component';
 import {SimpleLayoutComponent} from './layouts/simple-layout.component';
-import { HttpModule } from '@angular/http';
+import {HttpModule} from '@angular/http';
 @NgModule({
   imports: [
+    DateValueAccessorModule,
     BrowserModule,
     HttpModule,
-    FormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
