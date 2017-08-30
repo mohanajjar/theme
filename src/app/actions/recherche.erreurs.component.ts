@@ -46,6 +46,15 @@ export class RechercheErreursComponent implements OnInit {
   }
 
   searchErreurs(erreurForm) {
+    
+     let start = group.controls[startdate];
+      let end = group.controls[endDate];
+      if (start.value > end.value) {
+        return {
+          dates: "Date Date debut doit être inférieur ou egal à la date de date de fin"
+        };
+      }
+    
     this.submitted = true;
     this.data = JSON.stringify(erreurForm);
     console.log('Template-driven form submitted: ', erreurForm);
